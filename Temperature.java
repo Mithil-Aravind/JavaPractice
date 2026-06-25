@@ -2,22 +2,30 @@ import java.util.Scanner;
 
 public class Temperature {
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("1. C->F");
-        System.out.println("2. F->C");
+        boolean keepGoing = true;
+        while (keepGoing) {
 
-        double type = userInput.nextDouble();
-        System.out.println("How many degrees is it? ");
-        double degrees = userInput.nextDouble();
+            Scanner userInput = new Scanner(System.in);
 
-        if (type == 1) {
-            double converted = degrees * (9.0/5) + 32;
-            System.out.println(degrees + " celsius is " + converted + " fahrenheit");
-        } else if (type == 2) {
-            double converted = (degrees -32) * 5.0/9;
-            System.out.println(degrees + " fahrenheit is " + converted + " celsius");
-        } else {
-            System.out.println("That is not an option.");
+            System.out.println("How many degrees is it? ");
+            double degrees = userInput.nextDouble();
+
+
+            System.out.println("1. C->F");
+            System.out.println("2. F->C");
+            System.out.println("3. Exit.");
+            double type = userInput.nextDouble();
+
+            if (type == 1) {
+                double converted = degrees * (9.0 / 5) + 32;
+                System.out.println(degrees + " celsius is " + converted + " fahrenheit");
+            } else if (type == 2) {
+                double converted = (degrees - 32) * 5.0 / 9;
+                System.out.println(degrees + " fahrenheit is " + converted + " celsius");
+            } else if (type == 3) {
+                System.out.println("Goodbye!");
+                keepGoing = false;
+            }
         }
     }
 }
