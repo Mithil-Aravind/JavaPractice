@@ -29,8 +29,12 @@ public class calculator {
             double answer = numberOne * numberTwo;
             System.out.println(numberOne + "*" + numberTwo + "=" + answer);
         } else if (operation == 4) {
-            double answer = numberOne / numberTwo;
-            System.out.println(numberOne + "/" + numberTwo + "=" + answer);
+            if (numberTwo != 0) {
+                double answer = numberOne / numberTwo;
+                System.out.println(numberOne + "/" + numberTwo + "=" + answer);
+            } else {
+                System.out.println("Divide by zero error.");
+            }
         } else {
             System.out.println("This is not a valid option.");
         }

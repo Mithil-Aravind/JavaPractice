@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Temperature {
     public static void main(String[] args) {
-        boolean keepGoing = true;
-        while (keepGoing) {
+        while {
 
             Scanner userInput = new Scanner(System.in);
 
@@ -13,7 +12,6 @@ public class Temperature {
 
             System.out.println("1. C->F");
             System.out.println("2. F->C");
-            System.out.println("3. Exit.");
             double type = userInput.nextDouble();
 
             if (type == 1) {
@@ -22,9 +20,19 @@ public class Temperature {
             } else if (type == 2) {
                 double converted = (degrees - 32) * 5.0 / 9;
                 System.out.println(degrees + " fahrenheit is " + converted + " celsius");
-            } else if (type == 3) {
+            }
+
+            System.out.println("Do you want to do it again? Y / N");
+            String userAnswer = userInput.nextLine();
+
+            if (userAnswer == "Y") {
+                continue;
+            } else if (userAnswer == "N") {
                 System.out.println("Goodbye!");
-                keepGoing = false;
+                break;
+            } else {
+                System.out.println("That is not a valid option. The program is ending. Goodbye!");
+                break;
             }
         }
     }
